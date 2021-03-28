@@ -3,19 +3,24 @@ package learning.petProject.entity.member;
 import learning.petProject.entity.BaseEntity;
 import learning.petProject.entity.content.Content;
 import learning.petProject.entity.reply.Reply;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @NoArgsConstructor
-@Getter
-@Setter
+@Data
+@EntityListeners(AuditingEntityListener.class)
 public class Member extends BaseEntity {
 
     @Id
@@ -43,4 +48,8 @@ public class Member extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     MemberType type;
+
+
+
+
 }

@@ -26,10 +26,10 @@ public class InitDB {
 
     @PostConstruct
     public void init() {
-        initService.dbInitMember();
-        initService.dbInitContent();
-        initService.dbInitParentReply();
-        initService.dbInitChildReply();
+        //initService.dbInitMember();
+        //initService.dbInitContent();
+        //initService.dbInitParentReply();
+        //initService.dbInitChildReply();
     }
 
     @Component
@@ -61,7 +61,7 @@ public class InitDB {
             List<Member> allMembers = memberRepository.findAll();
             Random random = new Random();
             for (Member member : allMembers) {
-                for (int i = 0; i < 5; i++) {
+                for (int i = 0; i < 2; i++) {
                     Content free1 = createFreeContent("free title " + i, "free content " + i, List.of(ContentStatus.values()).get(i % 2), member);
                     Content photo1 = createPhotoContent("photo title " + i, "photo content " + i, List.of(ContentStatus.values()).get(i % 2), member);
                     Content question1 = createQuestionContent("question title " + i, "question content " + i, List.of(ContentStatus.values()).get(i % 2), member);
