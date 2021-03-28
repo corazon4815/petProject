@@ -5,6 +5,6 @@ Language : JAVA with Spring Framework
 
 ORM : Hibernate with JPA and use Querydsl and Spring data JPA
 
-DB : MariaDB
+DB : Mysql
 
-Web Page : Javascript and Typescript (need to learn)
+Web Page : React
